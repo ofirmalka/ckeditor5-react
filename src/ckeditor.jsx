@@ -42,7 +42,7 @@ export default class CKEditor extends React.Component {
 	// Render a <div> element which will be replaced by CKEditor.
 	render() {
 		return (
-			<div ref={ ref => ( this.domContainer = ref ) }></div>
+			<div style={this.props.style} ref={ ref => ( this.domContainer = ref ) }></div>
 		);
 	}
 
@@ -112,11 +112,13 @@ CKEditor.propTypes = {
 	onInit: PropTypes.func,
 	onFocus: PropTypes.func,
 	onBlur: PropTypes.func,
-	disabled: PropTypes.bool
+	disabled: PropTypes.bool,
+	style: PropTypes.objcet,
 };
 
 // Default values for non-required properties.
 CKEditor.defaultProps = {
-	config: {}
+	config: {},
+	style: {},
 };
 
